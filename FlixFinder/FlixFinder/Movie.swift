@@ -8,20 +8,8 @@
 import Foundation
 import SwiftData
 
-struct MovieResponse: Codable {
-    let results: [MovieDTO]
-}
-
-struct MovieDTO: Codable {
-    let id: Int
-    let title: String
-    let overview: String
-    let poster_path: String
-    let genre_ids: [Int]
-}
-
 @Model
-final class Movie: Codable {
+final class Movie {
     @Attribute(.unique)
     let id: Int
     let title: String
@@ -36,8 +24,4 @@ final class Movie: Codable {
         self.poster_path = poster_path
         self.genre = genre
     }
-}
-
-extension Genre {
-    static var allGenres: [Genre] = []
 }
