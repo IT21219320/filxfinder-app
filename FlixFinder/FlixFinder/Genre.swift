@@ -8,6 +8,10 @@
 import Foundation
 import SwiftData
 
+struct GenreResponse: Codable {
+    let genres: [Genre]
+}
+
 @Model
 final class Genre {
     @Attribute(.unique) let id: Int
